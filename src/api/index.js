@@ -16,7 +16,7 @@ export const getToken = () => {
 const token = getToken();
 
 export const registerSubmit = async (username, password) => {
-  let url = "http://fitnesstrac-kr.herokuapp.com/api/users/register";
+  let url = "https://fitnesstrac-kr.herokuapp.com/api/users/register";
 
   try {
     const response = await fetch(url, {
@@ -47,7 +47,7 @@ export const registerSubmit = async (username, password) => {
 };
 
 export const loginSubmit = async (username, password) => {
-  let url = "http://fitnesstrac-kr.herokuapp.com/api/users/login";
+  let url = "https://fitnesstrac-kr.herokuapp.com/api/users/login";
 
   try {
     const response = await fetch(url, {
@@ -65,10 +65,6 @@ export const loginSubmit = async (username, password) => {
     if (data.token) {
       alert("You have successfully logged in!");
       setToken(data.token);
-      // location.reload();
-      // {
-      //   localStorage.getItem("token") ? <Redirect to="/" /> : null;
-      // }
     }
 
     return data;

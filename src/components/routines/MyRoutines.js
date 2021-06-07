@@ -51,7 +51,7 @@ const MyRoutines = ({ currentUser, activities }) => {
 
   const handleSubmitDeleteRoutine = async (id) => {
     try {
-      const routines = await deleteRoutineApi(id); //<--change to currentUser
+      const routines = await deleteRoutineApi(id);
       location.reload();
     } catch (error) {
       console.error(error);
@@ -61,7 +61,7 @@ const MyRoutines = ({ currentUser, activities }) => {
   const handleSubmitDeleteActivity = async (id) => {
     console.log(id);
     try {
-      const activity = await deleteActivityApi(id); //<--change to currentUser
+      const activity = await deleteActivityApi(id);
       location.reload();
     } catch (error) {
       console.error(error);
@@ -70,7 +70,7 @@ const MyRoutines = ({ currentUser, activities }) => {
 
   const handleSubmitUpdateActivities = async (routineId, count, duration) => {
     try {
-      const routines = await updateActivitiesApi(routineId, count, duration); //<--change to currentUser
+      const routines = await updateActivitiesApi(routineId, count, duration);
       location.reload();
     } catch (error) {
       console.error(error);
@@ -82,7 +82,7 @@ const MyRoutines = ({ currentUser, activities }) => {
       return;
     }
     try {
-      const routines = await fetchUserRoutines(currentUser); //<--change to currentUser
+      const routines = await fetchUserRoutines(currentUser);
       setUserRoutines(routines);
       console.log(routines);
       console.log(activities);
@@ -164,10 +164,10 @@ const MyRoutines = ({ currentUser, activities }) => {
               )}
               <form onSubmit={handleSubmit}>
                 <label>Add Activity to this Routine</label>
-                <select // do this for myRoutines. select an option that adds that activity from all activities and submit.
+                <select
                   name="Activities"
                   id="select-activity"
-                  value={activityId} //set to id
+                  value={activityId}
                   onChange={(event) => {
                     setRoutineId(routine.id);
                     setActivityId(event.target.value);
